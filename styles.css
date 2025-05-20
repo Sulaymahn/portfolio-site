@@ -68,7 +68,7 @@ nav {
     background-color: var(--white);
 }
 
-nav svg * {
+nav svg {
     fill: var(--dark);
 }
 
@@ -82,7 +82,6 @@ nav>button {
 }
 
 nav>button>svg {
-    color: var(--dark);
     height: 32px;
 }
 
@@ -132,6 +131,7 @@ section.hero {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 section.hero>h3 {
@@ -142,6 +142,15 @@ section.hero>.graphic {
     height: 200px;
     visibility: hidden;
     background-color: var(--dark);
+}
+
+section.hero>img {
+    position: absolute;
+    width: 280px;
+    right: 0px;
+    bottom: 200px;
+    z-index: -1;
+    overflow: hidden;
 }
 
 section.header {
