@@ -21,6 +21,47 @@ html {
     color: var(--dark);
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes sword-hover {
+    0% {
+        transform: translate(0, 0);
+        transform: rotate(450deg);
+    }
+
+    50% {
+        transform: translate(0px, 0px);
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: translate(100px, 200px);
+        transform: rotate(20deg);
+    }
+}
+
 .text-blue {
     color: var(--blue);
 }
@@ -90,6 +131,101 @@ nav>button {
     width: auto;
 }
 
+#nav-logo {
+    animation: slideIn 200ms ease-in forwards;
+}
+
+#sword {
+    /* animation-name: sword-hover;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards; */
+}
+
+div#sidebar {
+    display: flex;
+    transform: translateX(100%);
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-top: 100px;
+    height: calc(100vh - 100px);
+    width: 100%;
+    z-index: 9;
+    background-color: var(--white);
+}
+
+#sidebar-toggle-btn {
+    transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#sidebar-toggle-btn.active {
+    transform: rotate(45deg);
+}
+
+div#sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+div#sidebar li {
+    transform: translateX(100%);
+    opacity: 0;
+    animation-name: slideIn;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+div#sidebar>ul>li:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+div#sidebar>ul>li:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+div#sidebar>ul>li:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+div#sidebar>ul>li:nth-child(4) {
+    animation-delay: 300ms;
+}
+
+div#sidebar>ul>li:nth-child(5) {
+    animation-delay: 400ms;
+}
+
+div#sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: var(--page-padding);
+    height: 80px;
+    color: var(--dark);
+}
+
+div#sidebar a.text-blue {
+    color: var(--blue);
+}
+
+div#sidebar a:focus,
+div#sidebar a:active,
+div#sidebar a:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+
+div#sidebar>.copyright {
+    margin: var(--page-padding);
+    color: var(--dark);
+}
+
 footer {
     background-color: var(--dark);
     padding: var(--page-padding);
@@ -114,7 +250,7 @@ footer>.links li {
     margin-bottom: 0.5rem;
 }
 
-footer>.copyright {
+.copyright {
     margin-top: 6rem;
     font-size: 1rem;
 }
@@ -148,7 +284,7 @@ section.hero>.graphic {
 section.hero>img {
     position: absolute;
     width: 280px;
-    right: 0px;
+    right: 0;
     bottom: 200px;
     z-index: -1;
     overflow: hidden;

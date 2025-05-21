@@ -14,8 +14,8 @@
   </head>
 
   <body>
-    <nav>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 526.41 200">
+    <nav id="navbar">
+      <svg id="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 526.41 200">
         <rect x="276.04" y="174.58" width="25.04" height="25.42" />
         <rect x="326.05" y="174.58" width="25.04" height="25.42" />
         <rect x="150.54" y="150.95" width="25.04" height="0.03" />
@@ -33,7 +33,11 @@
         <rect x="200.66" y="48.73" width="0.07" height="25.04" />
       </svg>
 
-      <button>
+      <button
+        id="sidebar-toggle-btn"
+        onclick="toggleSideBar()"
+        title="sidebar toggle"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.22 100.52">
           <rect x="62.61" y="75.48" width="62.61" height="25.04" />
           <rect width="125.22" height="25.04" />
@@ -42,7 +46,19 @@
       </button>
     </nav>
 
-    <section class="hero">
+    <div id="sidebar">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#mobile-apps-header">Mobile Apps</a></li>
+        <li><a href="#web-apps-header">Web Apps</a></li>
+        <li><a href="#games-header">Games</a></li>
+        <li><a href="#contact" class="text-blue">Contact Me</a></li>
+      </ul>
+
+      <p class="copyright">© 2025 Sulaymahn. All rights reserved.</p>
+    </div>
+
+    <section id="hero" class="hero">
       <div class="graphic"></div>
       <h4>
         I am <span class="bold">Sulaymahn</span>.<br />A curiosity-driven
@@ -50,10 +66,10 @@
         and building software solutions that solve real world problems.
       </h4>
 
-      <img src="Assets/Images/sword.png" title="sword" />
+      <img src="Assets/Images/sword.png" id="sword" title="sword" />
     </section>
 
-    <section class="header">
+    <section id="mobile-apps-header" class="header">
       <h2>I Build<br />Mobile Apps</h2>
       <h3>Frameworks</h3>
       <ul>
@@ -181,7 +197,7 @@
       >
     </section>
 
-    <section class="header">
+    <section id="web-apps-header" class="header">
       <h2>I Build<br />Web Apps</h2>
       <h3>Frameworks</h3>
       <ul>
@@ -195,15 +211,6 @@
     <section id="belang" class="project">
       <div class="title">
         <h2>Belang</h2>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.6 200">
-          <g id="Layer_2" data-name="Layer 2">
-            <g id="budjet">
-              <path
-                d="M153.09,25,89,89,0,0V46.91l65.58,65.58,17.09,17.09,6.78,6.78L153.09,200l87.51-87.51Zm-39.77,87.5,39.77-39.77,39.78,39.77-39.78,39.78Z"
-              />
-            </g>
-          </g>
-        </svg>
       </div>
       <div class="image"></div>
       <h3 class="subtitle">Boolean expression compiler.</h3>
@@ -295,19 +302,15 @@
 
       <a href="#" class="try">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.54 190.12">
-          <g id="Layer_2" data-name="Layer 2">
-            <g id="dynolink">
-              <path
-                d="M50.49,188.11a6.87,6.87,0,0,0,9.71,0l67.37-67.37a20.44,20.44,0,0,0-28.91-28.9l-35,35a6.81,6.81,0,0,1-9.45.24,6.71,6.71,0,0,1-.14-9.61L89.18,82.36a20.45,20.45,0,0,0,0-28.9,20.44,20.44,0,0,0-28.9,0L25.17,88.57a6.72,6.72,0,0,1-9.48,0l-.12-.13,0,0-.08-.09-.1-.1,0,0,0,0,0,0,0-.06,0,0-.12-.15L15,87.79l-.07-.1,0,0,0-.06,0,0,0,0,0-.07,0-.06,0-.06-.05-.07,0,0-.22-.42-.08-.18-.07-.16-.1-.25,0-.07,0-.06,0,0,0-.09L14,85.69v0l0-.07,0-.11,0-.06,0-.14v-.15l-.08-.35a1.05,1.05,0,0,1,0-.13h0a.13.13,0,0,0,0-.06v-.33a.49.49,0,0,1,0-.11c0-.09,0-.17,0-.25v-.08a2.09,2.09,0,0,1,0-.25.49.49,0,0,1,0-.11V83.3a2.11,2.11,0,0,1,0-.25v-.16l0-.11a.78.78,0,0,1,0-.14v0l0-.11a.29.29,0,0,1,0-.09v-.05a.94.94,0,0,1,0-.16c0-.06,0-.12,0-.17v0s0-.1,0-.15h0l0-.1.06-.17,0-.11.08-.2.05-.11,0-.06,0-.1,0-.06a.47.47,0,0,1,0-.1l0,0,0-.07,0-.06,0-.07.06-.11.17-.16h0L15,79.9c0-.06.08-.1.1-.14l.08-.09.09-.11a1.53,1.53,0,0,1,.13-.16l.06-.06.1-.11.13-.14L83.06,11.73a6.88,6.88,0,0,0,0-9.72h0a6.88,6.88,0,0,0-9.72,0L6,69.38a20.44,20.44,0,0,0,28.9,28.9l35-35A6.79,6.79,0,0,1,79.33,63a6.72,6.72,0,0,1,.14,9.62L44.36,107.76a20.44,20.44,0,0,0,28.9,28.9l35-35a6.7,6.7,0,0,1,10.15,8.72h0a6.8,6.8,0,0,1-.57.65L50.49,178.39a6.86,6.86,0,0,0,0,9.72Z"
-              />
-            </g>
-          </g>
+          <path
+            d="M50.49,188.11a6.87,6.87,0,0,0,9.71,0l67.37-67.37a20.44,20.44,0,0,0-28.91-28.9l-35,35a6.81,6.81,0,0,1-9.45.24,6.71,6.71,0,0,1-.14-9.61L89.18,82.36a20.45,20.45,0,0,0,0-28.9,20.44,20.44,0,0,0-28.9,0L25.17,88.57a6.72,6.72,0,0,1-9.48,0l-.12-.13,0,0-.08-.09-.1-.1,0,0,0,0,0,0,0-.06,0,0-.12-.15L15,87.79l-.07-.1,0,0,0-.06,0,0,0,0,0-.07,0-.06,0-.06-.05-.07,0,0-.22-.42-.08-.18-.07-.16-.1-.25,0-.07,0-.06,0,0,0-.09L14,85.69v0l0-.07,0-.11,0-.06,0-.14v-.15l-.08-.35a1.05,1.05,0,0,1,0-.13h0a.13.13,0,0,0,0-.06v-.33a.49.49,0,0,1,0-.11c0-.09,0-.17,0-.25v-.08a2.09,2.09,0,0,1,0-.25.49.49,0,0,1,0-.11V83.3a2.11,2.11,0,0,1,0-.25v-.16l0-.11a.78.78,0,0,1,0-.14v0l0-.11a.29.29,0,0,1,0-.09v-.05a.94.94,0,0,1,0-.16c0-.06,0-.12,0-.17v0s0-.1,0-.15h0l0-.1.06-.17,0-.11.08-.2.05-.11,0-.06,0-.1,0-.06a.47.47,0,0,1,0-.1l0,0,0-.07,0-.06,0-.07.06-.11.17-.16h0L15,79.9c0-.06.08-.1.1-.14l.08-.09.09-.11a1.53,1.53,0,0,1,.13-.16l.06-.06.1-.11.13-.14L83.06,11.73a6.88,6.88,0,0,0,0-9.72h0a6.88,6.88,0,0,0-9.72,0L6,69.38a20.44,20.44,0,0,0,28.9,28.9l35-35A6.79,6.79,0,0,1,79.33,63a6.72,6.72,0,0,1,.14,9.62L44.36,107.76a20.44,20.44,0,0,0,28.9,28.9l35-35a6.7,6.7,0,0,1,10.15,8.72h0a6.8,6.8,0,0,1-.57.65L50.49,178.39a6.86,6.86,0,0,0,0,9.72Z"
+          />
         </svg>
         Try DynoLink</a
       >
     </section>
 
-    <section class="header">
+    <section id="games-header" class="header">
       <h2>I Build<br />Games</h2>
       <h3>Frameworks</h3>
       <ul>
@@ -336,7 +339,7 @@
       >
     </section>
 
-    <footer>
+    <footer id="contact">
       <h2>Have an idea you want to bring to life?</h2>
       <p>I would love to hear from you.</p>
       <div class="links">
